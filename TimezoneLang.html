@@ -1,0 +1,23 @@
+<template>
+    <div class="content slds-p-left_xx-large">
+        <h2 style="font-family: KarbonBold; font-size: 32px;" class="slds-p-bottom_medium">{timeZoneLabel} &#38; {defaultLanguageLabel}</h2>
+        <div class="slds-p-bottom_medium">
+            <label for="profession" style="color: #3E3E3C;">{timeZoneLabel}</label>
+            <lightning-combobox
+                name="timezone"
+                id="timezone"
+                value={timezone}
+                options={options}
+                onchange={handleTimeZoneChange} 
+                variant="label-hidden" style="max-width: 400px;"></lightning-combobox>
+        </div>
+        <span  style="color: #3E3E3C;padding-bottom: 10px">{defaultLanguageLabel}</span>
+        <div class="slds-p-bottom_x-large">            
+            <button class={engLangButtonStyle} type="button" onclick={handleLanguageChange} data-name="en_US">English</button>
+            <button class={frLangButtonStyle} type="button" onclick={handleLanguageChange} data-name="fr">Français</button>
+        </div>
+        <div>
+            <button class={buttonStyle} disabled={isButtonDisabled} type="button" onclick={handleSave}>{saveChangesLabel}</button>
+        </div>
+    </div>
+</template>
